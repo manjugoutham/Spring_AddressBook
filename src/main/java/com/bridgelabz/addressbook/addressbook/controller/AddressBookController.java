@@ -14,8 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/address")
 public class AddressBookController {
-
-
+    
     @Autowired
     Addressbookservice addressBookService;
 
@@ -50,7 +49,7 @@ public class AddressBookController {
         return new ResponseEntity<Response>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = {"/delete/{personId}"})
+    @DeleteMapping(value = {"/delete/{addressId}"})
     public ResponseEntity<Response> deleteAddress(@PathVariable int addressId){
         addressBookService.deleteAddressData(addressId);
         Response response = new Response("delete address book", "Deleted ID is"+addressId);
